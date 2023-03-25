@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My Flask App</title>
+</head>
+
+<body>
+  <h1>Movies Data</h1>
+  <ul>
+    {% for number in data %}
+    <a href="result.html">
+      <li>
+        <form method="POST">
+          <input type="hidden" name="movie" value="{{ data[number] }}">
+          <button type="submit">{{ data[number] }}</button>
+        </form>
+    </a>
+    {% endfor %}
+  </ul>
+
+
+  <!-- Display the result from the recommender.py script -->
+
+  {% if result %}
+  <p>Result: {{ result }}</p>
+  {% endif %}
+</body>
+
+</html>
